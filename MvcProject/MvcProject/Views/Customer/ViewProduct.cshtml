@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MvcProject.Models.Product>
+
+@{
+    ViewBag.Title = "ViewProduct";
+    Layout = "~/Views/Shared/_MainCust.cshtml";
+}
+
+<h2>ViewProduct</h2>
+ 
+
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            @if ((item.ImageUrl) != null)
+            {
+                <img src="@Url.Content(@item.ImageUrl)" id="imgupload" alt="Product" width="150px" style="" height="150px">
+            }            <div class="card-body">
+                <h5 class="card-title">Name: @item.Name</h5>
+                <h5 class="card-title">Price:@item.Price</h5>
+                <h5 class="card-title">Discount: @item.Discount</h5>
+                <p class="card-text">Description: @item.Description.</p>
+                @Html.ActionLink("Add to Cart", "AddCarts", new { Id = item.Pid }) 
+            </div>
+        </div>
+  
+    }
+
+
+ 

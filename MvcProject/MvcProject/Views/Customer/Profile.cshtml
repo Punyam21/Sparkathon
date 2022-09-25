@@ -1,0 +1,105 @@
+﻿@model MvcProject.Models.User
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_MainCust.cshtml";
+}
+
+<script>
+
+
+    $(document).ready(function () {
+        $("input[type='text']").prop("readonly", true);
+         $('#btnedit').click(function (e) {
+            e.preventDefault();
+            var btn = $("#btnedit").val();
+            if (btn == "Edit") {
+                $('#btnedit').val("Update");
+                $("input[type='text']").prop("readonly", false);
+
+
+            } else {
+                $('#btnedit').prop("readonly", true);
+                $('#myForm').submit();
+                $('#btnedit').val("Edit");
+                $("input[type='text']").prop("readonly", true);
+            }
+
+
+        });
+
+    })
+</script>
+
+<div class="row">
+    <div class="col-md-offset-3 col-md-6">
+
+        <div id="feedback-form">
+            <h2 class="header">Active Buyer</h2>
+            <div>
+
+                <form method="post" id="myForm" action="/Customer/Profile" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6">
+                                @if ((@Model.ImageUrl) != null)
+                                {
+                                    <img src="@Url.Content(@Model.ImageUrl)" id="imgupload" alt="Product" width="150px" style="" height="150px">
+                                }
+                                <input type="file" id="fufile" name="ImageFile" />
+
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label for="Email">Email-Address</label>
+                            </div>
+
+                            <div class="col-md-9">
+                                <label id="Email" />@ViewBag.r</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label for="Name">UserName</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="Name" id="Name" value="@Model.Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label for="Mobile">Mobile No.</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="Mobile" id="Mobile" value="@Model.Mobileno">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label for="Address">Address</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="Address" id="Address" value="@Model.Address">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-7">
+                                <input type="submit" id="btnedit" value="Edit" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+</div></div>

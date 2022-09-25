@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MvcProject.Models.Product>
+
+@{
+    ViewBag.Title = "ViewProduct";
+    Layout = "~/Views/Shared/_Customer.cshtml";
+}
+
+
+ 
+
+<div class="container">
+
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;margin:10px;float:left;" id="viewcard">
+            @if ((@item.ImageUrl) != null)
+            {
+                <img src="@Url.Content(@item.ImageUrl)" class="card-img-top" alt="Product" id="imgupload" alt="Product" width="150px" height="150px">
+            }
+            <div class="card-body">
+                <p>Rating-@item.Rating</p>
+                <h5 class="card-title">Category-@item.Category</h5>
+                <h5>Price-@item.Price</h5>
+                <p>Discount</p> <del>@item.Discount</del>
+                <p class="card-text">Description-@item.Description</p>
+                <div>
+                    @Html.ActionLink("Delete", "DeleteProduct", new { Id = item.Pid })
+                    <i class='fas fa-trash'></i>
+
+                    @Html.ActionLink("Edit", "EditProduct", new { Id = item.Pid })
+                    <i class='far fa-edit'></i>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+

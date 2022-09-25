@@ -1,0 +1,24 @@
+﻿.wave::after {
+    content: "";
+    position: fixed;
+    width: 250%;
+    height: 100%;
+    background-color: #03a9f4;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) skew(0, -10deg);
+    border-radius: 50%;
+    z-index: -1;
+    animation: wavy 8s infinite ease-in-out alternate;
+}
+
+@keyframes wavy {
+    from {
+        transform: translateX(-50%) skew(0, -10deg);
+    }
+
+    to {
+        transform: translateX(-40%) skew(10deg, 0);
+    }
+}
+/* for product */

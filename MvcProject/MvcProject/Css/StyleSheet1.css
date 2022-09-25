@@ -1,0 +1,156 @@
+﻿ 
+#feedback-form {
+    width: 580px;
+     background-color: #fcfcfc;
+    padding: 20px 50px 40px;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    font-family: sans-serif;
+    margin-top:20px;
+}
+
+#feedback-form * {
+    box-sizing: border-box;
+}
+
+.deals-value .amount {
+    text-decoration: line-through;
+}
+
+.woocommerce-Price-currencySymbol {
+    margin-right: 10px;
+}
+
+#feedback-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#feedback-form input {
+    margin-bottom: 15px;
+}
+
+#feedback-form input[type=text],input[type=file] {
+    display: block;
+    height: 32px;
+    padding: 6px 16px;
+    width: 100%;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+#feedback-form label {
+    float:left;
+    color: #777;
+    font-size: 0.8em;
+}
+
+#feedback-form input[type=checkbox] {
+    float: left;
+}
+
+#feedback-form input:not(:checked) + #feedback-phone {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#feedback-form #feedback-phone {
+    transition: .3s;
+}
+
+#feedback-form button[type=submit] {
+    display: block;
+    margin: 20px auto 0;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    color: #eee;
+    font-weight: 700;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    background: #207cca; /* Old browsers */
+    background: -moz-linear-gradient(left, #207cca 0%, #9f58a3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #207cca 0%,#9f58a3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #207cca 0%,#9f58a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#9f58a3',GradientType=1 ); /* IE6-9 */
+}
+ 
+/***********************************************************************/
+.nav {
+    background-color: #03a9f4;
+    color: white;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.nav-link{
+    height:50px;
+    color:white;
+    font-size:18px;
+    padding:10px;
+    
+
+}
+/**************************************/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 24rem;
+    margin: 20px;
+    text-align: center;
+    font-family: arial;
+    float: left;
+    height: auto;
+}
+
+    .card:Hover {
+         margin-top: -10px;
+        transform: translate(1, -9px);
+    }
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .card button:hover {
+        background-color:white;
+        color:black;
+        border:1px solid black;
+    }
+/*88888888888888888888888888888888888888*/
+.wave::after {
+    content: "";
+    position: fixed;
+    width: 250%;
+    height: 100%;
+    background-color: #03a9f4;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) skew(0, -10deg);
+    border-radius: 50%;
+    z-index: -1;
+    animation: wavy 8s infinite ease-in-out alternate;
+}
+
+@keyframes wavy {
+    from {
+        transform: translateX(-50%) skew(0, -10deg);
+    }
+
+    to {
+        transform: translateX(-40%) skew(10deg, 0);
+    }
+}
